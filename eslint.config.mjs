@@ -1,15 +1,11 @@
-import { FlatCompat } from '@eslint/eslintrc'
+import eslint from '@eslint/js'
 import perfectionist from 'eslint-plugin-perfectionist'
 import eslintPluginPretttierRecommended from 'eslint-plugin-prettier/recommended'
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint'
 
-const compat = new FlatCompat()
-
-export default [
+export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
-  ...compat.extends('eslint-config-standard'),
   eslintPluginPretttierRecommended,
   {
     rules: {
@@ -28,20 +24,7 @@ export default [
       'perfectionist/sort-imports': [
         'error',
         {
-          customGroups: {
-            type: {
-              react: ['^react$', '^react-.+'],
-              node: ['node:*']
-            },
-            value: {
-              react: ['^react$', '^react-.+'],
-              node: ['node:*']
-            }
-          },
-          environment: 'node',
           groups: [
-            'node',
-            'react',
             'type',
             ['builtin', 'external'],
             'internal-type',
@@ -52,7 +35,6 @@ export default [
             'unknown'
           ],
           ignoreCase: true,
-          internalPattern: ['@me.org/.+'],
           maxLineLength: undefined,
           newlinesBetween: 'always',
           order: 'asc',
@@ -64,4 +46,4 @@ export default [
       ]
     }
   }
-]
+)
