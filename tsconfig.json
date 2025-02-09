@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "lib": [
-      "es2023"
+      "ES2023",
+      "DOM"
     ],
     "module": "ES2015",
     "strict": true,

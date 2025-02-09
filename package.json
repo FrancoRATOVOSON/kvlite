@@ -1,6 +1,6 @@
 {
-  "name": "kvlite",
-  "version": "1.0.0",
+  "name": "@rjfranco/kvite",
+  "version": "0.1.0",
   "description": "",
   "exports": {
     ".": {
@@ -11,8 +11,9 @@
   },
   "scripts": {
     "lint": "eslint -c ./eslint.config.mjs src",
+    "prebuild": "rm -rf dist",
     "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "swc src -d dist/cjs",
+    "build:cjs": "swc src -d dist/cjs --strip-leading-paths",
     "build": "npm run build:esm & npm run build:cjs"
   },
   "keywords": [],
