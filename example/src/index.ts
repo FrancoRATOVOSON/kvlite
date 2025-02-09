@@ -8,10 +8,7 @@ const executor: SQLiteExecutor = <T>(query: string, params: unknown[] = []) => {
     try {
       const stmt = db.prepare(query)
       let result
-      if (
-        query.trim().toUpperCase().startsWith('SELECT') ||
-        query.trim().toUpperCase().includes('RETURNING')
-      ) {
+      if (query.trim().toUpperCase().startsWith('SELECT')) {
         result = stmt.all(params)
       } else {
         result = stmt.run(params)
