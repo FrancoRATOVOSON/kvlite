@@ -7,6 +7,21 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js",
       "types": "./dist/esm/index.d.ts"
+    },
+    "./better-sqlite3": {
+      "import": "./dist/esm/better-sqlite3/index.js",
+      "require": "./dist/cjs/better-sqlite3/index.js",
+      "types": "./dist/esm/better-sqlite3/index.d.ts"
+    },
+    "./expo": {
+      "import": "./dist/esm/expo/index.js",
+      "require": "./dist/cjs/expo/index.js",
+      "types": "./dist/esm/expo/index.d.ts"
+    },
+    "./libsql": {
+      "import": "./dist/esm/libsql/index.js",
+      "require": "./dist/cjs/libsql/index.js",
+      "types": "./dist/esm/libsql/index.d.ts"
     }
   },
   "scripts": {
@@ -19,10 +34,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "better-sqlite3": "^11.8.1",
+    "expo-sqlite": "^15.1.2"
+  },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.10.15",
+    "@types/better-sqlite3": "^7.6.12",
     "eslint": "^9.20.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-perfectionist": "^4.8.0",
